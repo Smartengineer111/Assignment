@@ -1,0 +1,149 @@
+1.Program to print Hello Students on the screen.
+....................................................................................................... 
+#include<stdio.h>
+int main()
+{
+printf("Hello");
+return 0;
+}                                Output :- Hello
+------------------------------------------------------------------------------------------------------
+
+2.program to print Hello in the first line and Students in the second line
+........................................................................................................
+#include<stdio.h>
+int main()
+{
+printf("Hello\n");
+printf("Student");
+return 0;
+}                                Output :- Hello
+                                           Student
+-------------------------------------------------------------------------------------------------------------
+
+3.Program to print “MySirG” on the screen. (Remember to print in double quotes)
+.................................................................................................
+#include<stdio.h>
+int main()
+{
+printf("\"MySirG\"");
+return 0;
+}                                 Output :- "MySirG"
+--------------------------------------------------------------------------------------------------
+
+4.Program to find the area of the circle. Take radius of circle from user as input and print the 
+result in below given format.
+...................................................................................................
+#include<stdio.h>
+int main()
+{
+    float area,radious;
+    printf("Enter Radious of Circle\n");
+    scanf("%f",&radious);
+    area=3.14*radious*radious;
+    printf("Area of Circle is =%f",area);
+    printf("\"MySirG\"");
+    return 0;
+}                                                 Output :- Enter Radious of Circle 5.2
+                                                            Area of Circle is = 84.90256
+--------------------------------------------------------------------------------------------------------
+
+5.Program to calculate the length of String using printf function.
+.......................................................................................................
+#include<stdio.h>
+int main()
+{
+   int b=printf("Deepak");
+   printf("%d",b);
+   return 0;
+}                                                 Output :- Deepak6  
+--------------------------------------------------------------------------------------------------------
+
+6.Program to print the name of the user in double quotes.
+  Expected output format – “Hello , Amit Kumar”
+........................................................................................................
+#include<stdio.h>
+int main()
+{
+  printf("\"Hello,Amit Kumar\"");
+
+    return 0;
+}                                                  Output :- Hello,Amit Kumar               
+------------------------------------------------------------------------------------------------------
+7.Program to print “%d” on the screen.
+......................................................................................................
+#include<stdio.h>
+int main()
+{
+  printf("%%d");
+  return 0;
+}                                                  Output :- %d
+---------------------------------------------------------------------------------------------------------
+8.Program to print “\n” on the screen.
+...........................................................................................................
+#include<stdio.h>
+int main()
+{
+  printf("\\n");
+  return 0;
+}                                                   Output :- \n
+--------------------------------------------------------------------------------------------------------
+9.Program to print “\\” on the screen.
+.........................................................................................................
+#include<stdio.h>
+int main()
+{
+  printf("\\\\");
+  return 0;
+}                                                  Output :- \\
+--------------------------------------------------------------------------------------------------------------
+10. WAP to take date as an input in below given format and convert the date format and 
+display the result as given below.
+User Input date format – “DD/MM/YYYY” (27/11/2022)
+Output format –
+“Day – DD , Month – MM , Year – YYYY” (Day – 27 ,Month – 07 , Year – 2022)
+.............................................................................................................
+#include<stdio.h>
+int main()
+{
+int day, month,year;
+printf("Enter the Date  in dd/mm/yyyy Format\n");
+scanf("%d/%d/%d",&day,&month,&year);
+printf("%d Day , %d Month, and Year %d  ",day,month,year);
+return 0;
+
+}
+                                                        Output:- Enter the Date in dd/mm/yyyy Format 12/04/1992
+                                                                                12 Day, 04 Month, and Year 1992
+---------------------------------------------------------------------------------------------------------------
+11. WAP to take time as an input in below given format and convert the time format and 
+display the result as given below.
+User Input date format – “HH:MM”
+Output format – “HH hour and MM Minute”
+Example –
+“11:25” converted to “11 Hour and 25 Minute”
+.............................................................................................................
+#include<stdio.h>
+int main()
+{
+int hour, min;
+printf("Enter Time in HH:MM Format\n");
+scanf("%d%d",&hour,&min);
+printf("%d Hour and %d Minutes",hour,min);
+return 0;
+
+}                                                                       Output:- Enter Time in HH:MM Format 10:30
+                                                                                           10 Hour and 30 Minutes
+--------------------------------------------------------------------------------------------------------------
+12.Find output of below code:
+................................................................................................................
+#include<stdio.h>
+int main()
+{
+   int b=printf("ineuron");
+   printf("%d",b);
+   return 0;
+}
+ 
+                                                   Output :- ineuron7
+-------------------------------------------------------------------------------------------------------------
+
