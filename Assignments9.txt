@@ -1,0 +1,453 @@
+                             Assignment - 9 
+1. Write a program which takes the month number as an input and display
+number of days in that month.
+#include <stdio.h>
+
+int main()
+{
+    int day;
+
+    /* Input month number from user */
+    printf("Enter Days number(1-7): ");
+    scanf("%d", &day);
+
+    switch(day)
+    {
+        case 1:
+            printf("Monday");
+            break;
+        case 2:
+            printf("Tuesday");
+            break;
+        case 3:
+            printf("Wednesday");
+            break;
+        case 4:
+            printf("Thursday");
+            break;
+        case 5:
+            printf("Friday");
+            break;
+        case 6:
+            printf("Saturday");
+            break;
+        case 7:
+            printf("Sunday");
+            break;
+
+           default:
+            printf("Invalid input! Please enter month number between 1-12");
+
+    }
+
+    return 0;
+}
+
+**********************************************************************************************************************
+2. Write a menu driven program with the following options:
+a. Addition
+b. Subtraction
+c. Multiplication
+d. Division
+e. Exit
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+int x,a,b;
+while(1)
+{
+printf("\nMultiple Operation Menu is given Below :");
+printf("\n1. Addition");
+printf("\n2. Substraction");
+printf("\n3. Multiplication");
+printf("\n4. Divisionn");
+printf("\n5. Exit");
+printf("\n.................Enter a Your Choice............................");
+scanf("%d",&x);
+
+switch(x)
+{
+case 1:
+    printf("enter Two No.");
+    scanf("%d%d",&a,&b);
+    printf("sum is %d",a+b);
+    break;
+
+case 2:
+    printf("enter Two No.");
+    scanf("%d%d",&a,&b);
+    printf("subs is %d",a-b);
+    break;
+
+case 3:
+    printf("enter Two No.");
+    scanf("%d%d",&a,&b);
+    printf("mul is %d",a*b);
+    break;
+
+case 4:
+    printf("enter Two No.");
+    scanf("%d%d",&a,&b);
+    printf("sum is %d",a/b);
+    break;
+case 5:
+    exit(0);
+
+
+
+default:
+    printf("\nValue is not Matched............");
+    break;
+
+}
+if(x==5)
+    break;
+}
+printf("\n");
+return 0;
+}
+
+***************************************************************************************************************************************
+3. Write a program which takes the day number of a week and displays a
+unique greeting message for the day.
+#include <stdio.h>
+
+int main()
+{
+    int day;
+    while(1)
+    {
+
+
+
+    /* Input month number from user */
+    printf("\nEnter Days number(1-7): ");
+    scanf("%d", &day);
+
+    switch(day)
+    {
+        case 1:
+            printf(" Monday is ***Marvalus Day***");
+            break;
+        case 2:
+            printf("Tuesday is @@@Perfect Day to Work@@@");
+            break;
+        case 3:
+            printf("Wednesday is ###Pretty Day###");
+            break;
+        case 4:
+            printf("Thursday is %%%Royal Day%%%");
+            break;
+        case 5:
+            printf("Friday is $$$Sweet Day$$$");
+            break;
+        case 6:
+            printf("Saturday is is &&&Cute Day &&&");
+            break;
+        case 7:
+            printf("Sunday is !!!!! Holiday !!!!");
+            break;
+        case 8:
+            exit(0);
+
+           default:
+            printf("Invalid input! Please enter month number between 1-7");
+
+    }
+    }
+    return 0;
+}
+
+********************************************************************************************************************************************
+4. Write a menu driven program with the following options:
+a. Check whether a given set of three numbers are lengths of an
+isosceles triangle or not
+b. Check whether a given set of three numbers are lengths of sides of
+a right angled triangle or not
+c. Check whether a given set of three numbers are equilateral triangle
+or not
+d. Exit
+#include <stdio.h>
+
+int main()
+{
+    int choice,a,b,c;
+    while(1)
+    {
+       printf("Enter your choice: \n");
+    printf("1. To check isosceles Triangle\n");
+    printf("2. To check Right Triangle\n");
+    printf("3. To check Equlateral Triangle\n");
+    scanf("%d",&choice);
+
+    printf("Enter the lenghth of 3 sides of triangle\n");
+    scanf("%%%",&a,&b,&c);
+
+
+    switch (choice)
+    {
+
+        case 1:
+            if(a==b||b==c||c==a)
+            {
+
+            printf("isosceles");
+            }
+            else
+                printf("Not an isosceles");
+        break;
+
+        case 2:
+            if(a*a==b*b+c*c||b*b==c*c+a*a||c*c==a*a+b*b)
+               {
+
+                    printf("Right angle Triangle");
+               }
+                    else
+                        printf("Not Right angle Triangle");
+                    break;
+        case 3:
+                    if((a==b)&&(b==c))
+                    {
+
+                    printf("Equlateral Triangle");
+                    }
+                    else
+                        printf("Not an Equlateral Triangle");
+                    break;
+                default:
+                    printf("Invalid");
+                    break;
+    }
+
+    }
+
+
+    return 0;
+
+}
+
+**********************************************************************************************************************************************
+5. Convert the following if-else-if construct into switch case:
+if(var == 1)
+System.out.println("good");
+else if(var == 2)
+System.out.println("better");
+else if(var == 3)
+System.out.println("best");
+else
+System.out.println("invalid");
+#include <stdio.h>
+
+int main()
+{
+    int num;
+
+    printf("Enter any number: ");
+    scanf("%d", &num);
+
+    switch (num ==1)
+    {
+        // Num is positive
+        case 1:
+            printf("Good", num);
+        break;
+
+        // Num is either negative or zero
+        case 0:
+            switch (num ==2)
+            {
+                case 1:
+                    printf("Better", num);
+                    break;
+                case 0:
+                    switch(num==3)
+                    {
+                     case 1:
+                    printf("Best", num);
+                    break;
+                    case 0:
+                    printf("Invalid Choice");
+                    break;
+            }
+        break;
+    }
+
+    return 0;
+}
+}
+*****************************************************************************************************************************************
+6. Program to check whether a year is a leap year or not. Using switch
+statement
+
+#include <stdio.h>
+
+int main()
+{
+    int year,rem;
+
+    printf("Enter any year: ");
+    scanf("%d", &year);
+    rem=((year%4==0)&&((year%400==0)||(year%100!=0)));
+
+    switch (rem)
+    {
+
+        case 1:
+            printf("Leap year");
+        break;
+
+
+        case 0:
+
+            printf("Not a Leap Year");
+                    break;
+        default:
+            printf("Invalid choice");
+        break;
+    }
+
+    return 0;
+}
+********************************************************************************************************************************************************************
+7. Program to take the value from the user as input electricity unit charges
+and calculate total electricity bill according to the given condition . Using
+the switch statement.
+For the first 50 units Rs. 0.50/unit
+For the next 100 units Rs. 0.75/unit
+For the next 100 units Rs. 1.20/unit
+For units above 250 Rs. 1.50/unit
+An additional surcharge of 20% is added to the bill.
+#include<stdio.h>
+int main()
+{
+    float x,amount=0,total=0;
+    printf("Enter the unit consumed by Customer");
+    scanf("%f",&x);
+    switch(x<=50)
+    {
+        case 1: amount=x*0.5;
+        break;
+        case 0 : switch(x<=150)
+                 {
+                     case 1: amount=25+(x-50)*0.75;
+                     break;
+                     case 0 : switch(x<=250)
+                            {
+                                case 1: amount=100+(x-150)*1.20;
+                                break;
+                                case 0: amount=220+(x-250)*1.5;
+                                break;
+                            }break;
+                 }break;
+}
+    total=amount+amount*0.20;
+    printf("Total amount=Rs. %f",total);
+    printf("\nSurcharge is included=20%%");
+    getch();
+    return 0;
+}
+
+
+************************************************************************************************************************************************
+8. Program to convert a positive number into a negative number and negative
+number into a positive number using a switch statement.
+#include <stdio.h>
+
+int main()
+{
+    int num;
+
+    printf("Enter any number: ");
+    scanf("%d", &num);
+
+    switch (num > 0)
+    {
+        // Num is positive
+        case 1:
+            printf("%d is positive.", num);
+        break;
+
+        // Num is either negative or zero
+        case 0:
+            switch (num < 0)
+            {
+                case 1:
+                    printf("%d is negative.", num);
+                    break;
+                case 0:
+                    printf("%d is zero.", num);
+                    break;
+            }
+        break;
+    }
+
+    return 0;
+}
+***********************************************************************************************************************
+9. Program to Convert even number into its upper nearest odd number
+Switch Statement.#include <stdio.h>
+#include<math.h>
+
+int main()
+{
+    int number,choice;
+    printf("Enter The Number");
+    scanf("%d",&number);
+    switch(number%2==0)
+    {
+    case 1:
+        printf("Nearest upper odd is :");
+        printf("%d",number+1);
+        break;
+    case 0:
+        printf("Nearest lower even is :");
+        printf("%d",number-1);
+        break;
+    }
+
+    return 0;
+}
+
+********************************************************************************************************************************************
+10. C program to find all roots of a quadratic equation using switch case
+#include <stdio.h>
+#include<math.h>
+
+int main()
+{
+    float a,b,c,root1,root2,imag,disc;
+    /* Input month number from user */
+    printf("\nEnter the Value of a,b,c of Quardratic Equation: ");
+    scanf("%f%f%f",&a,&b,&c);
+    disc=(b*b)-(4*a*c);
+
+    switch(disc>0)
+    {
+        case 1:
+            root1=(-b+sqrt(disc))/(2*a);
+            root2=(-b-sqrt(disc))/(2*a);
+
+
+            printf("Root are Distinct and Raeal:%.2f and %.2f",root1,root2);
+            break;
+        case 0:
+            switch(disc<0)
+            {
+                case 1:
+
+            root1=root2 =-b/(2*a);
+            imag=sqrt(-disc)/(2*a);
+            printf("Root are Complex and Raeal:%.2f+i%.2f and %.2f-i%.2f",root1,imag,root2,imag);
+            break;
+                case 0:
+                    root1=root2=-b/(2*a);
+                    printf("Roots are Equal  : %.2f and %.2f",root1,root2);
+                    break;
+
+    }
+    }
+    return 0;
+}
+
