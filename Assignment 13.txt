@@ -1,0 +1,244 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------                                                           
+																 Assignment 13
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+																 More on Function
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Write a recursive function to calculate sum of first N natural numbers
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+
+int addNumbers(int n);
+
+int main() {
+
+  int num;
+  printf("Enter a positive integer: ");
+  scanf("%d", &num);
+  printf("Sum = %d", addNumbers(num));
+  return 0;
+}
+
+int addNumbers(int n) {
+  if (n != 0)
+    return n + addNumbers(n - 1);
+  else
+    return n;
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Write a recursive function to calculate sum of first N odd natural numbers
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int SumOdd(int n)
+{
+   if(n==1)
+   
+    return 1;
+    
+   return(2*n-1+SumOdd(n-1));
+}
+
+int main()
+{
+    int num1;
+    printf("Enter Number");
+    scanf("%d",&num1);
+    printf("Sum of all odd numbers in the given of %d range is:%d",num1,SumOdd(num1));
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Write a recursive function to calculate sum of first N odd natural numbers
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int SumOdd(int n)
+{
+   if(n==1)
+   
+    return 1;
+    
+   return(2*n-1+SumOdd(n-1));
+}
+
+int main()
+{
+    int num1;
+    printf("Enter Number");
+    scanf("%d",&num1);
+    printf("Sum of all odd numbers in the given of %d range is:%d",num1,SumOdd(num1));
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Write a recursive function to calculate sum of squares of first n natural numbers
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int SumOfSqr(int n)
+{
+   if(n==1)
+   
+    return 1;
+    
+   return(n*n+SumOfSqr(n-1));
+}
+
+int main()
+{
+    int num1;
+    printf("Enter Number");
+    scanf("%d",&num1);
+    printf("Sum of all Squre of  the given of %d numbers is:%d",num1,SumOfSqr(num1));
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Write a recursive function to calculate sum of digits of a given number
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+ 
+// Function to check sum of digit using recursion
+int sum_of_digit(int n)
+{
+    if (n == 0)
+       return 0;
+    return (n % 10 + sum_of_digit(n / 10));
+}
+ 
+// Driven Program to check above
+int main()
+{
+    int num;
+    printf("Enter the number to calculate sum of all digit");
+    scanf("%d",&num);
+    int result = sum_of_digit(num);
+    printf("Sum of digits in %d is %d\n", num, result);
+    return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+6. Write a recursive function to calculate factorial of a given number
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+ 
+// Recursive function to calculate factorial of a number
+unsigned long factorial(int n)
+{
+    // base case: if `n` is 0 or 1
+    if (n < 1) {
+        return 1;
+    }
+ 
+    // use the recurrence relation
+    return n * factorial(n - 1);
+}
+ 
+int main()
+{
+    int n = 5;
+    printf("The Factorial of %d is %lu", n, factorial(n));
+ 
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+7. Write a recursive function to calculate HCF of two numbers
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int main(){
+
+    int num1, num2;
+
+    printf("Enter first number : ");
+    scanf("%d",&num1);
+
+    printf("Enter second number : ");
+    scanf("%d",&num2);
+
+    int hcf = calculateHCF(num1, num2);
+
+    printf("The hcf of %d and %d is %d",num1,num2,hcf);
+}
+
+int calculateHCF(int num1, int num2){
+    if(num2 != 0) {
+
+        return calculateHCF(num2, num1%num2);
+    }else {
+
+        return num1;
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+8. Write a recursive function to print first N terms of Fibonacci series
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<conio.h>
+int fibonacci(int);
+int main(){ 
+	int n, i; 
+	printf("Enter the number of element you want in series :n"); 
+	scanf("%d",&n); 
+	printf("fibonacci series is : ");
+	for(i=0;i<n;i++) { 
+		printf("%d ",fibonacci(i));
+	}
+	getch();
+}
+int fibonacci(int i){ 
+	if(i==0) return 0; 
+	else if(i==1) return 1; 
+	else return (fibonacci(i-1)+fibonacci(i-2));
+} 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+9. Write a program in C to count the digits of a given number using recursion.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+
+
+int countDigits(int num)
+{
+    static int count=0;
+
+    if(num>0)
+    {
+        count++;
+        countDigits(num/10);
+    }
+    else
+    {
+        return count;
+    }
+}
+
+
+int main()
+{
+    int number;
+    int count=0;
+
+    printf("Enter any number :: ");
+    scanf("%d",&number);
+
+    count=countDigits(number);
+
+    printf("\nTotal number of digits in [ %d ] are :: %d\n",number,count);
+
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+10. Write a program in C to calculate the power of any number using recursion.
+------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+ 
+int power(int b,int e)
+{
+    if(e==0)
+        return 1;
+    else 
+        return (b*power(b,e-1));
+}
+ 
+void main()
+{
+    int base,exponent;
+    printf("Enter the base\n");
+    scanf("%d",&base);
+    printf("Enter the exponent\n");
+    scanf("%d",&exponent);
+
+    printf("Power(%d^%d) = %d\n",base,exponent,power(base,exponent));
+}
