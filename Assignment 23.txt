@@ -1,0 +1,211 @@
+---------------------------------------------------------------------------------------------------------------------------------------                                               
+                                                  Assignment - 23
+-----------------------------------------------------------------------------------------------------------------------------------------
+                                                   Basics of C++
+--------------------------------------------------------------------------------------------------------------------------------------
+ //1. Write a C++ program to print Hello MySirG on the screen.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+	cout<<"MySirG";
+	return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+//2. Write a C++ program to print Hello on the first line and MySirG on the second line using endl.
+-------------------------------------------------------------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+	cout<<"MySirG";
+	cout<<endl;
+	cout<<"MySirG";
+	
+	return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+//3. Write a C++ program to calculate the sum of two numbers.
+---------------------------------------------------------------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{   int a,b,sum=0;
+	cout<<"ENTER FIRST NUMBERS";
+	cin>>a;
+	cout<<endl;
+	cout<<"ENTER SECOND NUMBERS";
+	cin>>b;
+	cout<<endl;
+	sum=a+b;
+	cout<<"SUM OF "<<a<<" and "<<b<<" is "<<sum;
+	
+	return 0;
+--------------------------------------------------------------------------------------------------------------------------------------
+//4. Write a C++ program to calculate the area of a circle.
+---------------------------------------------------------------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{   int r;
+    float area;
+	cout<<"ENTER RADIOUS OF CIRCLE : ";
+	cin>>r;
+	cout<<endl;
+	area=3.14*r*r;
+	cout<<"ARAE OF CIRCLE "<<" is "<<area;
+	
+	return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+//5. Write a C++ program to calculate the volume of a cuboid.
+---------------------------------------------------------------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{   
+    float arm,Volume;
+	cout<<"ENTER ARM OF CUBOID : ";
+	cin>>arm;
+	cout<<endl;
+	Volume=arm*arm*arm;
+	cout<<"VOLUME OF CUBOID "<<" OF ARM "<<arm<<" is "<<Volume;
+	
+	return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+//6. Write a C++ program to calculate an average of 3 numbers.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{   int NUM1,NUM2,NUM3;
+    int sum=0;
+    float AVG;
+	cout<<"ENTER THE FIRST NUMBER : ";
+	cin>>NUM1;
+	cout<<endl;
+	
+	cout<<"ENTER THE SECOND NUMBER : ";
+	cin>>NUM2;
+	cout<<endl;
+	
+	cout<<"ENTER THE THIRD NUMBER : ";
+	cin>>NUM3;
+	cout<<endl;
+	
+    sum=sum+NUM1+NUM2+NUM3;
+	AVG=sum/3;
+
+	
+	cout<<"AVERAGE OF THREE NUMBERS "<<NUM1<<" , "<<NUM2<<" AND "<<NUM3<<" IS  "<<AVG;
+	
+	return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+//7. Write a C++ program to calculate the square of a number.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{   int NUM1;
+    
+	cout<<"ENTER THE FIRST NUMBER TO FIND SQURE: ";
+	cin>>NUM1;
+	cout<<endl;
+	
+	cout<<"SQURE OF : "<<NUM1<<" IS "<<NUM1*NUM1;
+	
+	
+	return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+//8. Write a C++ program to swap values of two int variables without using third variable
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{   int NUM1,NUM2;
+    
+	cout<<"ENTER TWO NUMBER : ";
+	cin>>NUM1>>NUM2;
+	cout<<endl;
+	
+	cout<<"BEFORE SWAPPING : "<<"FIRST NUMBER"<<" IS :"<<NUM1<<"  "<<"SECOND NUMBER IS :"<<NUM2;
+	cout<<endl;
+	
+    cout<<"AFTER SWAPPING : "<<"FIRST NUMBER"<<" IS :"<<(NUM1+NUM2)-NUM1<<"  "<<"SECOND NUMBER IS :"<<NUM2-NUM1;
+	
+	
+	return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+//9. Write a C++ program to find the maximum of two numbers.
+----------------------------------------------------------------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{   int NUM1,NUM2;
+    
+	cout<<"ENTER TWO NUMBER : ";
+	cin>>NUM1>>NUM2;
+	cout<<endl;
+	if(NUM1>NUM2)
+	{
+	cout<<"MAXIMUM NUMBER IN : "<<NUM1<<" BETWEEN "<<NUM2<<" IS :"<<NUM1;
+    }
+    
+    else
+    {
+    	cout<<"MAXIMUM NUMBER IN : "<<NUM1<<" BETWEEN "<<NUM2<<" IS :"<<NUM2;
+	}
+	cout<<endl;
+	
+   
+	
+	
+	return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+//10. Write a C++ program to add all the numbers of an array of size 10.
+---------------------------------------------------------------------------------------------------------------------------------------
+#include<iostream>
+#include<stdio.h>
+#include<conio.h>
+using namespace std;
+int main()
+{   int NUM[10],sum;
+    
+	cout<<"ENTER Ten NUMBERs :- "<<endl;
+	for(int i=0;i<10;i++)
+	{
+	cin>>NUM[i];
+    }
+    cout<<endl;
+    //........................Displaying Ten Numbers............................................//
+    cout<<"YOU HAVE ENTERED NUMBERs : "<<endl;
+    cout<<"---------------------------------------------------------------------------"<<endl;
+    for(int i=0;i<10;i++)
+    {
+	  cout<<NUM[i]<<"\t";
+	
+	}
+	
+    cout<<endl;
+    
+    //.....................Adding Ten Numbers.................................................//
+  	for(int i=0;i<10;i++)
+	{
+		sum=sum+NUM[i];
+	}
+	cout<<"---------------------------------------------------------------------------"<<endl;
+	cout<<"---------------------------------------------------------------------------"<<endl;
+	
+	cout<<"SUM OF ARRAY ELEMENTS IS : "<<sum<<endl;
+	cout<<"---------------------------------------------------------------------------"<<endl;
+	getch();
+	return 0;
+}
+	
+-------------------------------------------------------------------------------------------------------------------------------------------
