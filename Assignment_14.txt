@@ -1,0 +1,354 @@
+--------------------------------------------------------------------------------------------------------------------------------------
+            						Assignment-14
+--------------------------------------------------------------------------------------------------------------------------------------
+						         Arrays in C
+--------------------------------------------------------------------------------------------------------------------------------------
+//1. Write a program to calculate the sum of numbers stored in an array of size 10. Take
+//array values from the user.
+---------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+	int a[50],i,n,sum=0;
+	
+    printf("Enter num of elements :");
+    scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("Enter %d num :",(i+1));
+		scanf("%d",&a[i]);
+		sum=sum+a[i];
+	}
+	
+		printf("sum of given num is %d:",sum);
+		getch();
+		return 0;
+	}
+--------------------------------------------------------------------------------------------------------------------------------------
+//2. Write a program to calculate the average of numbers stored in an array of size 10.
+//Take array values from the user.
+---------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+	int a[50],i,n,sum=0;
+	float avg;
+    printf("Enter num of elements :");
+    scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("Enter %d num :",(i+1));
+		scanf("%d",&a[i]);
+		sum=sum+a[i];
+	}
+	
+	avg=sum/n;
+	
+		printf("average of given num is %f:",avg);
+		getch();
+		return 0;
+	
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+//3. Write a program to calculate the sum of all even numbers and sum of all odd
+//numbers, which are stored in an array of size 10. Take array values from the user.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+	int a[10],i,size;
+	int even_sum=0,odd_sum=0;
+	printf("Enter size of array :");
+	scanf("%d",&size);
+	printf("Enter Array Elements  :");
+	for(i=0;i<size;i++)
+	{
+	 scanf("%d",&a[i]);
+ 
+    }
+
+for(i=0;i<size;i++)
+{
+	if(a[i]%2==0)
+	{
+		even_sum=even_sum+a[i];
+	}
+	else
+	{
+		odd_sum=odd_sum+a[i];
+	}
+}
+    printf("\n Sum of all Even Numbers is %d:",even_sum);
+    
+    printf("\n Sum of all odd Numbers is %d:",odd_sum);
+    
+    getch();
+    return 0;
+    
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+//4. Write a program to find the greatest number stored in an array of size 10. Take array
+//values from the user.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int a[10],i,n,max=-1;
+	
+    printf("Enter num of elements :");
+    scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("Enter %d num :",(i+1));
+		scanf("%d",&a[i]);
+		
+	}
+	
+	for(i=0;i<n;i++)
+	{
+		if(max<a[i])
+		max=a[i];
+	}
+	
+		printf("Maximum number in array list is %d :",max);
+		getch();
+		return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+//5. Write a program to find the smallest number stored in an array of size 10. Take array
+values from the user.
+----------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int a[100],i,n,max=0;
+	
+    printf("Enter num of elements :");
+    scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("Enter %d num :",(i+1));
+		scanf("%d",&a[i]);
+		
+	}
+	
+	for(i=0;i<n;i++)
+	{
+		if(max<a[i])
+		max=a[i];
+	}
+	
+		printf("Maximum number in array list is %d :",max);
+		getch();
+		return 0;
+	
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+//6. Write a program to sort elements of an array of size 10. Take array values from the
+//user.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int a[10],i,j,temp;
+	
+    
+	
+		printf("Enter 10 num\n");
+		for(i=0;i<=10;i++)
+	{
+		scanf("%d",&a[i]);
+		
+	}
+	
+	for(i=0;i<=9;i++)
+	
+	{
+		for(j=i+1;j<=10;j++)
+		{
+		
+		if(a[i]>a[j])
+		{
+			temp=a[i];
+			a[i]=a[j];
+			a[j]=temp;
+		}
+	
+	}
+}
+for(i=0;i<=9;i++)
+{
+
+	printf("\t%d",a[i]);}
+		//printf("Maximum number in array list is :",max);
+		getch();
+		return 0;
+	
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+//7. Write a program to find second largest in an array.Take array values from the user.
+-----------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include<conio.h>
+#include <limits.h> // For INT_MIN
+int main()
+{
+    int arr[10]={10,20,30,40,50,60,70,80,90,100},i;
+    int max1, max2;
+       
+    max1 = max2 = INT_MIN;
+
+  /*
+     * Check for first largest and second
+     */
+    for(i=0; i<10; i++)
+    {
+        if(arr[i] > max1)
+        {
+            /*
+             * If current element of the array is first largest
+             * then make current max as second max
+             * and then max as current array element
+             */
+            max2 = max1;
+            max1 = arr[i];
+        }
+        else if(arr[i] > max2 && arr[i] < max1)
+        {
+            /*
+             * If current array element is less than first largest
+             * but is greater than second largest then make it
+             * second largest
+             */
+            max2 = arr[i];
+        }
+    }
+
+    printf("First largest = %d\n", max1);
+    printf("Second largest = %d", max2);
+
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+//8. Write a program to find the second smallest number in an array.Take array values
+//from the user.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <limits.h> // For INT_MIN
+
+    // Maximum array size 
+
+int main()
+{
+    int arr[10], size, i;
+    int max1, max2;
+
+    /* Input size of the array */
+    printf("Enter size of the array : ");
+    scanf("%d", &size);
+
+    /* Input array elements */ 
+    printf("Enter elements in the array: ");
+    for(i=0; i<size; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    max1 = max2 = INT_MIN;
+
+
+    /*
+     * Check for first largest and second
+     */
+    for(i=0; i<size; i++)
+    {
+        if(arr[i] > max1)
+        {
+            /*
+             * If current element of the array is first largest
+             * then make current max as second max
+             * and then max as current array element
+             */
+            max2 = max1;
+            max1 = arr[i];
+        }
+        else if(arr[i] > max2 && arr[i] < max1)
+        {
+            /*
+             * If current array element is less than first largest
+             * but is greater than second largest then make it
+             * second largest
+             */
+            max2 = arr[i];
+        }
+    }
+
+    printf("First largest = %d\n", max1);
+    printf("Second largest = %d", max2);
+
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------------------------------------
+//9. Write a program in C to read n number of values in an array and display it in reverse
+//order. Take array values from the user.
+----------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int arr[10], i;
+    printf("Enter any 10 elements: ");
+    for(i=0; i<10; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    printf("\nThe array elements in reverse order:\n");
+    for(i=9; i>=0; i--)
+    {
+        if(i==0)
+            printf("%d", arr[i]);
+        else
+            printf("\t %d , ", arr[i]);
+    }
+    getch();
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+//10. Write a program in C to copy the elements of one array into another array.Take array
+//values from the user.
+----------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+	int a1[50];
+	int i,n;
+	int a2[50];
+	printf("Enter array Size:");
+	scanf("%d",&n);
+	printf("Give array input a1 :\n");
+	for(i=0;i<n;i++){
+		scanf("%d",&a1[i]);
+	}
+	    
+	printf("first elements are a1 : ");
+	for(i=0;i<n;i++){
+	printf("\n%d",a1[i]);}
+	
+	printf("\n..............copy array is in process......................\n");
+		
+		for(i=0;i<n;i++)
+		{
+	    a2[i]=a1[i];
+	    }
+		
+		printf("\nsecond elements are a2 : ");
+	for(i=0;i<n;i++){
+	printf("\n%d",a2[i]);}
+	    		
+			getch();
+		return 0;
+	
+}
