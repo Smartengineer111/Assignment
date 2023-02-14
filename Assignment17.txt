@@ -1,0 +1,238 @@
+----------------------------------------------------------------------------------------------------------------------------------------
+                                                Assignment -17
+--------------------------------------------------------------------------------------------------------------------------------------
+                                         String Basics in C Language
+--------------------------------------------------------------------------------------------------------------------------------------
+1. Write a program to calculate the length of the string. (without using built-in method)
+---------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	char str[20]="BHOPAL";
+	int i;
+	for(i=0;str[i];i++){}
+	
+	
+		printf("Length of String is %d",i);
+	
+	return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+2. Write a program to count the occurrence of a given character in a given string.
+--------------------------------------------------------------------------------------------------------------------------------------
+//2. Write a program to count the occurrence of a given character in a given string
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	char str[]="deepak";
+	char b='e';
+	int i=0,count=0;
+	while(str[i]!='\0')
+	{
+		if(str[i]==b)
+		count++;
+	}
+	
+	
+		printf("%d",count);
+	
+	return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+3. Write a program to count vowels in a given string
+----------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+int main()
+{
+  int i = 0, count = 0;
+  char s[1000];
+
+  printf("Input a string\n");
+  gets(s);
+
+  while (s[i] != '\0') {
+    if (s[i] == 'a' || s[i] == 'A' || s[i] == 'e' || s[i] == 'E' || s[i] == 'i' || s[i] == 'I' || s[i] =='o' || s[i]=='O' || s[i] == 'u' || s[i] == 'U')
+      count++;
+    i++;
+  }
+
+  printf("Number of vowels in the string: %d", count);
+
+  return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+4. Write a program to convert a given string into uppercase
+-----------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include <string.h>
+ 
+int main()
+{
+    char s[1000];  
+    int i;
+ 
+    printf("Enter  the string in lower case: ");
+    gets(s);
+    
+    printf("string in lowercase ='%s'\n",s);
+ 
+     
+    for(i=0;s[i];i++)  
+    {
+        if(s[i]>=97 && s[i]<=122)
+         s[i]-=32;
+ 	}
+ 	
+     
+    printf("string in uppercase ='%s'\n",s);
+ 
+ 
+    
+ 
+ 
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+5. Write a program to convert a given string into lowercase
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<string.h>
+ 
+int main() {
+   char string[100];
+ 
+   printf("Enter String : ");
+   gets(string);
+ 
+   strlwr(string);
+   printf("\nString after strlwr : %s", string);
+ 
+   return (0);
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+6. Write a program to reverse a string.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>  
+#include <string.h>  
+int main()  
+{  
+    char str[40]; // declare the size of character string  
+    printf (" \n Enter a string to be reversed: ");  
+    scanf ("%s", str);  
+      
+    // use strrev() function to reverse a string  
+    printf (" \n After the reverse of a string: %s ", strrev(str));  
+    return 0;  
+}  
+--------------------------------------------------------------------------------------------------------------------------------------
+7. Write a program in C to count the total number of alphabets, digits and special
+--------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+ 
+int main()
+{
+    char s[1000]; 
+    int i,alphabets=0,digits=0,specialcharacters=0;
+ 
+    printf("Enter  the string : ");
+    gets(s);
+     
+    for(i=0;s[i];i++)  
+    {
+        if((s[i]>=65 && s[i]<=90)|| (s[i]>=97 && s[i]<=122) )
+          alphabets++;
+        else if(s[i]>=48 && s[i]<=57)
+         digits++;
+        else
+         specialcharacters++;
+ 
+ 	}
+ 	
+     
+    printf("Alphabets = %d\n",alphabets);
+    printf("Digits = %d\n",digits);
+    printf("Special characters = %d", specialcharacters);
+    
+ 
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+8. Write a program in C to copy one string to another string.
+-----------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include<string.h>
+ 
+int main()
+{
+    char s1[1000],s2[1000];  
+    int i;
+ 
+    printf("Enter any string: ");
+    gets(s1);
+    for(i=0;s1[i]!='\0';i++)  //  or  for(i=0;s1[i];i++)
+    {
+    	s2[i]=s1[i];
+	}
+	s2[i]='\0';
+ 
+    printf("original string s1='%s'\n",s1);
+    printf("copied string   s2='%s'",s2);
+ 
+ 
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+9. Write a C program to sort a string array in ascending order.
+----------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+
+int main (void) {
+   char string[] = "simply easy learning";
+   char temp;
+
+   int i, j;
+   int n = strlen(string);
+
+   printf("String before sorting - %s \n", string);
+
+   for (i = 0; i < n-1; i++) {
+      for (j = i+1; j < n; j++) {
+         if (string[i] > string[j]) {
+            temp = string[i];
+            string[i] = string[j];
+            string[j] = temp;
+         }
+      }
+   }
+   
+   printf("String after sorting  - %s \n", string);
+   return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+10. Write a program in C to Find the Frequency of Characters.
+---------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int i, count=0;
+    char str[100], ch;
+    printf("Enter the String: ");
+    gets(str);
+    printf("Enter any character (present in string) to find its frequency: ");
+    scanf("%c", &ch);
+    for(i=0; str[i]!='\0'; i++)
+    {
+        if(ch==str[i])
+            count++;
+    }
+    printf("\nFrequency of %c = %d", ch, count);
+    printf("\n\n%c occurs %d times in %s", ch, count, str);
+    getch();
+    return 0;
+}
