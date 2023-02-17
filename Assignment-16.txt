@@ -1,0 +1,484 @@
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                 ASSIGNMENT-16
+--------------------------------------------------------------------------------------------------------------------------------------
+                                             Multi diamentional Array
+--------------------------------------------------------------------------------------------------------------------------------------
+1. Write a program to calculate the sum of two matrices each of order 3x3.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+	int a[3][3],b[3][3];
+	int add[3][3];
+	int i,j;
+	printf("Enter array elements of a");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+		scanf("%d",&a[i][j]);
+		}
+	}
+	
+	
+	printf("\nEntered value of a  is :");
+	
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			
+	     printf("\t%d",a[i][j]);
+	
+		}
+	}
+	
+	
+	printf("\nEnter array elements of b");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+		scanf("%d",&b[i][j]);
+		}
+	}
+	
+	
+	printf("\nEntered value of b  is :");
+	
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			
+	     printf("\t%d",b[i][j]);
+	
+		}
+	}
+	
+	printf("\n************************************************************\n");
+printf("Resultant matrix is as follows\n");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+add[i][j]=a[i][j]+b[i][j];
+printf("%d ",add[i][j]);
+}
+printf("\n");
+}
+return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+2. Write a program to calculate the product of two matrices each of order 3x3.
+-------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+	int a[3][3],b[3][3];
+	int add[3][3];
+	int i,j;
+	printf("Enter array elements of a");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+		scanf("%d",&a[i][j]);
+		}
+	}
+	
+	
+	printf("\nEntered value of a  is :");
+	
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			
+	     printf("\t%d",a[i][j]);
+	
+		}
+	}
+	
+	
+	printf("\nEnter array elements of b");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+		scanf("%d",&b[i][j]);
+		}
+	}
+	
+	
+	printf("\nEntered value of b  is :");
+	
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			
+	     printf("\t%d",b[i][j]);
+	
+		}
+	}
+	
+	printf("\n************************************************************\n");
+printf("Resultant matrix is as follows\n");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+add[i][j]=a[i][j]*b[i][j];
+printf("%d ",add[i][j]);
+}
+printf("\n");
+}
+return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+3. Write a program in C to find the transpose of a given matrix.
+---------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+int main() {
+  int a[10][10], transpose[10][10], r, c;
+  int i,j;
+  printf("Enter rows and columns: ");
+  scanf("%d %d", &r, &c);
+
+  // asssigning elements to the matrix
+  printf("\nEnter matrix elements:\n");
+  for (i = 0; i < r; ++i)
+  for (j = 0; j < c; ++j) {
+    printf("Enter element a%d%d: ", i + 1, j + 1);
+    scanf("%d", &a[i][j]);
+  }
+
+  // printing the matrix a[][]
+  printf("\nEntered matrix: \n");
+  for (i = 0; i < r; ++i)
+  for (j = 0; j < c; ++j) {
+    printf("%d  ", a[i][j]);
+    if (j == c - 1)
+    printf("\n");
+  }
+
+  // computing the transpose
+  for (i = 0; i < r; ++i)
+  for (j = 0; j < c; ++j) {
+    transpose[j][i] = a[i][j];
+  }
+
+  // printing the transpose
+  printf("\nTranspose of the matrix:\n");
+  for (i = 0; i < c; ++i)
+  for (j = 0; j < r; ++j) {
+    printf("%d  ", transpose[i][j]);
+    if (j == r - 1)
+    printf("\n");
+  }
+  return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+4. Write a program in C to find the sum of right diagonals of a matrix.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+
+void main()
+ 
+   {
+     int i,j,arr1[50][50],sum=0,n;
+	 
+       printf("\n\nFind sum of right diagonals of a matrix :\n");
+       printf("---------------------------------------\n");	 
+	 
+	 printf("Input the size of the square matrix : ");
+     scanf("%d", &n); 
+	 printf("Input elements in the first matrix :\n");
+       for(i=0;i<n;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+	           printf("element - [%d],[%d] : ",i,j);
+	           scanf("%d",&arr1[i][j]);
+			   if (i==j) sum= sum+arr1[i][j];
+            }
+        }  
+	 
+
+	 printf("The matrix is :\n");
+	 for(i=0;i<n;i++)
+	 {
+	   for(j=0;j<n ;j++)
+	     printf("% 4d",arr1[i][j]);
+	    printf("\n");
+	 }
+ 
+       printf("Addition of the right Diagonal elements is :%d\n",sum);
+    }
+--------------------------------------------------------------------------------------------------------------------------------------
+5. Write a program in C to find the sum of left diagonals of a matrix.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+
+void main()
+{
+    int mat[12][12];
+    int i,j,row,col,sum=0;
+    printf("Enter the number of rows and columns for 1st matrix\n");
+    scanf("%d%d",&row,&col);
+    printf("Enter the elements of the matrix\n");
+    for(i=0;i<row;i++)
+    {
+        for(j=0;j<col;j++)
+        {
+            scanf("%d",&mat[i][j]);
+        }
+    }
+
+    printf("The matrix\n");
+    for(i=0;i<row;i++)
+    {
+        for(j=0;j<col;j++)
+        {
+            printf("%d\t",mat[i][j]);
+        }
+        printf("\n");
+    }
+    //To add diagonal elements
+    for(i=0;i<row;i++)
+    {
+        for(j=0;j<col;j++)
+        {
+            if(i==j)
+            {
+                sum=sum+mat[i][j];
+            }
+        }
+    }
+
+    printf("The sum of diagonal elements of a square matrix = %d\n",sum);
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+6. Write a program in C to find the sum of rows and columns of a Matrix.
+-------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main()
+{
+    int m,n; 
+	int i,j;      //Row Column Declaration
+    printf("Enter the number of rows and column\n");
+    scanf("%d %d",&m,&n);    //Row Column Initialization
+    int arr[m][n];   //Matrix Declaration
+    printf("Enter the elements of the matrix\n");
+    for(i=0;i<m;i++)     //Matrix Initialization
+    {
+        for(j=0;j<n;j++)
+        {
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    printf("\nElements in the matrix are \n");
+    for(i=0;i<m;i++)     //Print Matrix
+   {
+        for(j=0;j<n;j++)
+        {
+            printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\nRow Sum....\n");
+    for(i=0;i<m;i++)   
+    {
+        int rsum=0;
+        for(j=0;j<n;j++)
+        {
+            rsum=rsum+arr[i][j];
+        }
+        printf("\nSum of all the elements in row %d is %d\n",i,rsum);
+    }
+    printf("\nColumn Sum....\n");
+    for(i=0;i<m;i++)
+    {
+        int csum=0;
+        for(j=0;j<n;j++)
+        {
+            csum=csum+arr[j][i];
+        }
+        printf("\nSum of all the elements in column %d is %d\n",i,csum);
+    }
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+7. Write a program in C to print or display the lower triangular of a given matrix.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+
+void main()
+   {
+  int arr1[10][10],i,j,n;
+  float determinant=0;
+
+  
+       printf("\n\nDisplay the lower triangular of a given matrix :\n");
+       printf("----------------------------------------------------\n");  
+
+
+     printf("Input the size of the square matrix : ");
+     scanf("%d", &n); 
+	 printf("Input elements in the first matrix :\n");
+       for(i=0;i<n;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+	           printf("element - [%d],[%d] : ",i,j);
+	           scanf("%d",&arr1[i][j]);
+            }
+        }  
+	 printf("The matrix is :\n");
+	 for(i=0;i<n;i++)
+	 {
+	   for(j=0;j<n ;j++)
+	     printf("% 4d",arr1[i][j]);
+	    printf("\n");
+	 }
+
+   printf("\nSetting zero in lower triangular matrix\n");
+   for(i=0;i<n;i++){
+      printf("\n");
+      for(j=0;j<n;j++)
+           if(i<=j)
+             printf("% 4d",arr1[i][j]);
+           else
+             printf("% 4d",0);
+  }
+       printf("\n\n");
+
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------
+8. Write a program in C to print or display an upper triangular matrix.
+-------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+int main()
+{   
+    int i,j;
+    int Max_Row;
+    int Max_Column;
+ 
+    printf("Enter the Number of Rows: ");
+    scanf("%d", &Max_Row);
+ 
+    printf("Enter the Number of Columns: ");
+    scanf("%d", &Max_Column);
+ 
+    int M[Max_Row][Max_Column];
+ 
+    printf("Enter the Elements in the Matrix: \n");
+    for (i = 0; i < Max_Row; i++)
+    {
+        for (j = 0; j < Max_Column; j++)
+        {
+            scanf("%d",&M[i][j]);
+        }
+    }
+ 
+    // Upper Triangular Matrix Logic
+    for (i = 0; i < Max_Row; i++)
+    {
+        for (j = 0; j < Max_Column; j++)
+        {
+            if (i < j)
+            {
+                M[i][j] = 0;
+            }
+        }
+    }
+ 
+    printf("The Upper Traingular Matrix is: \n");
+    for (i = 0; i < Max_Row; i++)
+    {
+        for (j = 0; j < Max_Column; j++)
+        {
+            printf("%d ", M[i][j]);
+            }
+        printf("\n");
+    }
+ 
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+9. Write a program in C to accept a matrix and determine whether it is a sparse matrix.
+----------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+   int row,col,i,j,a[10][10],count = 0;
+   printf("Enter row");
+   scanf("%d",&row);
+   printf("Enter Column");
+   scanf("%d",&col);
+   printf("Enter Element of Matrix1");
+   for(i = 0; i < row; i++){
+      for(j = 0; j < col; j++){
+         scanf("%d",&a[i][j]);
+      }
+   }
+   
+   printf("element are\n");
+   
+  for(i = 0; i < row; i++){
+      for(j = 0; j < col; j++){
+         printf("%4d",a[i][j]);
+      }
+      printf("\n");
+   }   
+   
+   
+   /*checking sparse of matrix*/
+   for(i = 0; i < row; i++){
+      for(j = 0; j < col; j++){
+         if(a[i][j] == 0)
+            count++;
+      }
+   }
+   if(count > ((row * col)/2))
+      printf("Matrix is a sparse matrix ");
+   else
+      printf("Matrix is not sparse matrix");
+      return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+10. Write a program in C to find the row with maximum number of 1s.
+-------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main(){
+
+   int mat[4][4] = {{0, 0, 0, 1}, 
+                    {0, 1, 1, 1}, 
+                    {1, 1, 1, 1}, 
+                    {0, 0, 0, 0}};
+
+   int max_count=0, index=-1;
+   int i,j;
+
+   for(i=0; i<4; i++){
+     int count = 0;
+     for(j=0; j<4; j++){ 
+         if(mat[i][j]==1) 
+            count++; 
+         
+     } 
+     if(count>max_count)
+     {
+        max_count = count;
+        index = i;
+     }
+   }
+
+   printf("Index of row with maximum 1s is %d", index);
+   return 0;
+
+}
