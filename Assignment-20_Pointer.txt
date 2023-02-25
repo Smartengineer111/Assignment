@@ -1,0 +1,296 @@
+======================================================================================================================================
+						Assignment-20
+**************************************************************************************************************************************
+ 						  Pointers
+======================================================================================================================================
+1. Write a function to swap values of two in variables of calling function. (TSRS)
+**************************************************************************************************************************************
+#include<stdio.h>
+int main()
+{
+	int a,b;
+	printf("Enter two numbers:");
+	scanf("%d%d",&a,&b);
+	
+	printf("\n\nBefore swapping: a = %d and b = %d\n", a, b);  
+  
+    swap(&a, &b);  
+  
+    printf("\nAfter swapping: a = %d and b = %d\n", a, b);  
+  
+    return 0;  
+}  
+  
+void swap(int *x, int *y)  
+{  
+    int temp;  
+  
+    temp = *x;  
+    *x   = *y;  
+    *y   = temp;  
+}  
+***************************************************************************************************************************************
+2. Write a function to swap strings of two char arrays of calling functions. (TSRS)
+**************************************************************************************************************************************
+#include<stdio.h>
+ 
+/* Swaps strings by swapping pointers */
+void swap1(char **str1_ptr, char **str2_ptr)
+{
+char *temp = *str1_ptr;
+*str1_ptr = *str2_ptr;
+*str2_ptr = temp;
+}
+ 
+int main()
+{
+char *str1 = "geeks";
+char *str2 = "forgeeks";
+swap1(&str1, &str2);
+printf("str1 is %s, str2 is %s", str1, str2);
+getchar();
+return 0;
+}
+**************************************************************************************************************************************
+3. Write a function to sort an array of int type values. [ void sort(int *ptr,int size);
+**************************************************************************************************************************************
+#include <stdio.h> 
+  
+// Function to sort the numbers using pointers 
+void sort(int n, int* ptr) 
+{ 
+    int i, j, t; 
+  
+    // Sort the numbers using pointers 
+    for (i = 0; i < n; i++) { 
+  
+        for (j = i + 1; j < n; j++) { 
+  
+            if (*(ptr + j) < *(ptr + i)) { 
+  
+                t = *(ptr + i); 
+                *(ptr + i) = *(ptr + j); 
+                *(ptr + j) = t; 
+            } 
+        } 
+    } 
+  
+    // print the numbers 
+    for (i = 0; i < n; i++) 
+        printf("%d ", *(ptr + i)); 
+} 
+  
+
+int main() 
+{ 
+    int n = 5; 
+    int arr[] = { 0, 23, 14, 12, 9 }; 
+  
+    sort(n, arr); 
+  
+    return 0; 
+} 
+
+*************************************************************************************************************************************** 
+4. Write a program in C to demonstrate how to handle the pointers in the program.
+***************************************************************************************************************************************
+#include<stdio.h>
+int main()
+{
+	int x=10,*p,**q,***r;
+	p=&x;
+	q=&p;
+	r=&q;
+	printf("%d %d %d %d\n",x,*p,**q,***r);
+	printf("%d %d %d\n",&x,p,*q,**r);
+	printf("%d %d\n",&q,*r);
+	printf("%d\n",&r);
+	
+}
+**************************************************************************************************************************************
+5. Write a program to find the maximum number between two numbers using a pointer
+**************************************************************************************************************************************
+#include <stdio.h>
+#include <stdlib.h>
+void main()
+{
+ int fno,sno,*ptr1=&fno,*ptr2=&sno;
+ 
+   printf("\n\n Pointer : Find the maximum number between two numbers :\n"); 
+   printf("------------------------------------------------------------\n");   
+ 
+   printf(" Input the first number : ");
+   scanf("%d", ptr1);
+   printf(" Input the second  number : ");
+   scanf("%d", ptr2); 
+
+
+ if(*ptr1>*ptr2)
+ {
+  printf("\n\n %d is the maximum number.\n\n",*ptr1);
+ }
+ else
+ {
+  printf("\n\n %d is the maximum number.\n\n",*ptr2);
+ }
+
+}
+***************************************************************************************************************************************
+6. Write a program to calculate the length of the string using a pointer
+**************************************************************************************************************************************
+#include<stdio.h>
+#include<conio.h>
+ 
+int string_ln(char*);
+ 
+void main() {
+   char str[20];
+   int length;
+  
+   
+   printf("\nEnter any string : ");
+   gets(str);
+   
+   length = string_ln(str);
+   printf("The length of the given string %s is : %d", str, length);
+   getch();
+}
+ 
+int string_ln(char*p) /* p=&str[0] */
+{
+   int count = 0;
+   while (*p != '\0') {
+      count++;
+      p++;
+   }
+   return count;
+}
+**************************************************************************************************************************************
+7. Write a program to count the number of vowels and consonants in a string using a
+pointer.
+***************************************************************************************************************************************
+#include <stdio.h>
+int main()
+{
+    char str[100];
+    char *p;
+    int  vCount=0,cCount=0;
+
+    printf("Enter any string: ");
+    fgets(str, 100, stdin);
+
+    //assign base address of char array to pointer
+    p=str;
+
+    //'\0' signifies end of the string
+    while(*p!='\0')
+    {
+        if(*p=='A' ||*p=='E' ||*p=='I' ||*p=='O' ||*p=='U'
+        		||*p=='a' ||*p=='e' ||*p=='i' ||*p=='o' ||*p=='u')
+            vCount++;
+        else
+            cCount++;
+        //increase the pointer, to point next character
+        p++;
+    }
+
+    printf("Number of Vowels in String: %d\n",vCount);
+    printf("Number of Consonants in String: %d",cCount);
+    return 0;
+}
+**************************************************************************************************************************************
+8. Write a program to compute the sum of all elements in an array using pointers.
+**************************************************************************************************************************************
+#include <stdio.h>
+void main() 
+{
+   int arr1[10];
+   int i,n, sum = 0;
+   int *pt;
+   
+ 	printf("\n\n Pointer : Sum of all elements in an array :\n"); 
+	printf("------------------------------------------------\n"); 
+	
+   printf(" Input the number of elements to store in the array (max 10) : ");
+   scanf("%d",&n);
+   
+   printf(" Input %d number of elements in the array : \n",n);
+   for(i=0;i<n;i++)
+      {
+	  printf(" element - %d : ",i+1);
+	  scanf("%d",&arr1[i]);
+	  } 	
+
+   pt = arr1; // pt store the base address of array arr1
+ 
+   for (i = 0; i < n; i++) {
+      sum = sum + *pt;
+      pt++;
+   }
+ 
+   printf(" The sum of array is : %d\n\n", sum);
+}
+**************************************************************************************************************************************
+9. Write a program to print the elements of an array in reverse order.
+****************************************************************************************************************************************
+#include<stdio.h>
+#define MAX 30
+ 
+void main()
+{
+	int size, i, arr[MAX];
+	int *ptr;
+ 
+	ptr = arr;
+ 
+	printf("Enter the size of array:\t");
+	scanf("%d", &size);
+ 
+	printf("Enter %d integers into array:\n", size);
+	for (i = 0; i < size; i++)
+	{
+		scanf("%d", ptr);
+		ptr++;
+	}
+ 
+	ptr = &arr[size - 1];
+ 
+	printf("Elements of array in reverse order are:\n");
+ 
+	for (i = size - 1; i >= 0; i--)
+	{
+		printf("%d\n", *ptr);
+		ptr--;
+	}
+}
+*****************************************************************************************************************************************
+10. Write a program to print a string in reverse using a pointer
+**************************************************************************************************************************************
+#include <stdio.h>
+int main()
+{
+    char str1[50];
+    char revstr[50];
+    char *stptr = str1;
+    char *rvptr = revstr;
+    int i=-1;
+ 	printf("\n\n Pointer : Print a string in reverse order :\n"); 
+	printf("------------------------------------------------\n");	
+    printf(" Input a string : ");
+    scanf("%s",str1);
+    while(*stptr)
+    {
+     stptr++;
+     i++;
+    }
+    while(i>=0)
+    {
+     stptr--;
+     *rvptr = *stptr;
+     rvptr++;
+     --i;
+    }
+    *rvptr='\0';
+    printf(" Reverse of the string is : %s\n\n",revstr);
+    return 0;
+}
