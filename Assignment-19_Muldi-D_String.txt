@@ -1,0 +1,290 @@
+--------------------------------------------------------------------------------------------------------------------------------------
+							Assignment-19
+--------------------------------------------------------------------------------------------------------------------------------------
+ 					Handling multiple Strings in C Language
+--------------------------------------------------------------------------------------------------------------------------------------
+
+1. Write a program to find the number of vowels in each of the 5 strings stored in two
+dimensional arrays, taken from the user.
+---------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+	char a[10][30];
+	int i,j,vowel=0;
+	printf("Enter the String");
+	for(i=0;i<3;i++)
+	{
+		fgets(a[i],30,stdin);
+	//scanf("%s",&a[i]);
+		
+	}
+	for(i=0;i<3;i++)
+	{
+		for(j=0;a[i][j]!='\0';i++)
+		
+			if(a[i][j]=='a'||a[i][j]=='e'||a[i][j]=='i'||a[i][j]=='o'||a[i][j]=='u')
+			vowel++;
+			
+		
+		printf("%s is ",a[i]);
+		printf("%d",vowel);
+		
+	}
+	vowel=0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+2. Write a program to sort 10 city names stored in two dimensional arrays, taken from
+the user.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<string.h>
+main(){
+   int i,j,n;
+   char str[100][100],s[100];
+   printf("Enter number of names :");
+   scanf("%d",&n);
+   printf("Enter names in any order:");
+   for(i=0;i<n;i++){
+      scanf("%s",str[i]);
+   }
+   for(i=0;i<n;i++){
+      for(j=i+1;j<n;j++){
+         if(strcmp(str[i],str[j])>0){
+            strcpy(s,str[i]);
+            strcpy(str[i],str[j]);
+            strcpy(str[j],s);
+         }
+      }
+   }
+   printf("The sorted order of names are:");
+   for(i=0;i<n;i++){
+      printf("\n%s",str[i]);
+   }
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+3. Write a program to read and display a 2D array of strings in C language.
+-------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+     char name[10][20];
+     int i,n;
+
+     printf("Enter the number of names (<10): ");
+     scanf("%d",&n);
+
+     // reading string from user
+     printf("Enter %d names:\n",n);
+     for(i=0; i<n; i++)
+     scanf("%s[^\n]",name[i]);
+
+     // dispaying strings
+     printf("\nEntered names are:\n");
+     for(i=0;i<n;i++)
+     puts(name[i]);
+
+     return 0;
+}
+----------------------------------------------------------------------------------------------------------------------------------------
+4. Write a program to search a string in the list of strings.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+   char str[20][50], s1[50];
+   int n, i, found=0;
+
+   printf("Enter how many string (names): ");
+   scanf("%d", &n);
+
+   printf("Enter %d strings:\n", n);
+   for(i=0; i<n; i++)
+   {
+     scanf("%s", str[i]);
+   }
+
+   printf("Enter a string to search: ");
+   scanf("%s", s1);
+
+   for(i=0; i<n; i++)
+   {
+     if(strcmp(s1, str[i]) == 0)
+     {
+       found=1;
+       printf("Found in row-%d\n", i+1);
+     }
+   }
+
+   if(found==0) printf("Not found");
+   return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+5. Suppose we have a list of email addresses, check whether all email addresses have
+‘@’ in it. Print the odd email out.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+int main()
+{
+	char a[10][30];
+	int i,j;
+	printf("Enter any three mail id");
+	for(i=0;i<3;i++)
+	{
+		gets(a[i]);
+	}
+	for(i=0;i<3;i++)
+	{
+		if(strchr(a[i],'@')!=0)
+		{
+			printf("%s\n",a[i]);
+		}
+		
+	}
+	
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+6. Write a program to print the strings which are palindrome in the list of strings.
+----------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+ 
+int checkpalindrome(char *s)
+{
+    int i,c=0,n;
+    n=strlen(s);
+	for(i=0;i<n/2;i++)  
+    {
+    	if(s[i]==s[n-i-1])
+    	c++;
+ 
+ 	}
+ 	if(c==i)
+        return 1;
+    else
+        return 0;
+ 
+ 	
+	  
+ }
+int main()
+{
+ 
+    char s[1000];  
+   
+    printf("Enter  the string: ");
+    gets(s);
+    
+ 
+    if(checkpalindrome(s))
+ 	    printf("string is palindrome");
+    else
+        printf("string is not palindrome");
+ 
+     
+     
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+7. From the list of IP addresses, check whether all ip addresses are valid.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+	char ip[]="23.134.12.13";
+	char *a=strtok(ip,".");
+	while(a!=NULL)
+	{
+		int x=atoi(a);
+		if((x>=0)&&(x<=255))
+		printf("%d ",x);
+		a=strtok(NULL,".");
+	}
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+8. Given a list of words followed by two words, the task is to find the minimum distance
+between the given two words in the list of words.
+--------------------------------------------------------------------------------------------------------------------------------------
+(Example : s = {“the”,”quick”,”brown”,”fox”,”quick”}
+----------------------------------------------------------------------------------------------------------------------------------------
+ word1 = “the”, word2 = “fox”, OUTPUT : 1 )
+--------------------------------------------------------------------------------------------------------------------------------------
+9. Write a program that asks the user to enter a username. If the username entered is
+one of the names in the list then the user is allowed to calculate the factorial of a
+number. Otherwise, an error message is displayed
+--------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int i,count=0;
+	char a[3][2][20]={{"Lukha","000"},{"Ashish","456"},{"Deepak","123"}};
+	
+	//char username[]="Deep";
+	//char password[]="123";
+    
+	char username[6];
+	char password[6];
+	printf("Enter the username");
+	gets(username);
+	printf("Enter the Password");
+	gets(password);
+		
+	for(i=0;i<3;i++)
+	{
+		if(strcmp(username,a[i][0])==0 && strcmp(password,a[i][1])==0 )
+		{
+		
+		printf("Login Successful !!");
+		fact();
+		
+		count=1;
+	    }
+	}
+	if(count==0)
+	printf("username or Password not Matched");
+	return 0;
+}
+
+int fact()
+{
+	int num,i,fact=1;
+	printf("\nEnter number");
+	scanf("%d",&num);
+	for(i=1;i<=num;i++)
+	{
+		fact=fact*i;
+	}
+	printf("Factorial of %d is %d",num,fact);
+	return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+10. Create an authentication system. It should be menu driven.
+--------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+ 
+void main()
+{
+	char password[10], username[10], ch;
+	int i;
+ 
+	printf("Enter User name: ");
+	gets(username);
+	printf("Enter the password < any 8 characters>: ");
+	for (i = 0; i < 8; i++)
+	{
+            ch = getchar();
+            password[i] = ch;
+            ch = '*' ;
+            printf("%c", ch);
+	}
+        password[i] = '\0';
+	/*  Original password can be printed, if needed */
+	printf("\n Your password is :");
+	for (i = 0; i < 8; i++)
+	{
+            printf("%c", password[i]);
+	}
+}
